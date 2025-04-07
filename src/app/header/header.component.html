@@ -1,0 +1,24 @@
+<header class="site-header">
+    <div class="container">
+        <div class="logo">
+            <a routerLink="/">AltGNetwork</a>
+        </div>
+
+        <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav" [class.active]="isMenuOpen">
+            <ul>
+                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        (click)="closeMenu()">Home</a></li>
+                <li><a routerLink="/resume" routerLinkActive="active" (click)="closeMenu()">Resume</a></li>
+                <li><a href="#articles" (click)="closeMenu()">Articles</a></li>
+                <li><a href="mailto:latesioanaugustin@gmail.com" class="contact-link" (click)="closeMenu()">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -14,71 +14,76 @@
         </div>
     </header>
 
-    <section class="resume-description">
-        <h3>Description</h3>
-        <p>
-            Innovative Front End Developer with Angular proficiency, backed by eight years of industry expertise.
-            Strong skills in HTML, CSS, JavaScript and ability to build responsive and dynamic websites.
-            Familiar with Angular tools and libraries, and committed to creating user-friendly and visually appealing
-            projects.
-        </p>
-    </section>
+    <div class="resume-main-content">
+        <section class="resume-description">
+            <h3>Description</h3>
+            <p>
+                Innovative Front End Developer with Angular proficiency, backed by eight years of industry expertise.
+                Strong skills in HTML, CSS, JavaScript and ability to build responsive and dynamic websites.
+                Familiar with Angular tools and libraries, and committed to creating user-friendly and visually
+                appealing
+                projects.
+            </p>
+        </section>
 
-    <section class="resume-education">
-        <h3>Education</h3>
-        <div class="education-item" *ngFor="let edu of education">
-            <div class="education-degree">
-                <h4>{{ edu.degree }}</h4>
-                <div class="education-institution">{{ edu.institution }}</div>
+        <section class="resume-education">
+            <h3>Education</h3>
+            <div class="education-item" *ngFor="let edu of education">
+                <div class="education-degree">
+                    <h4>{{ edu.degree }}</h4>
+                    <div class="education-institution">{{ edu.institution }}</div>
+                </div>
+                <div class="education-details">
+                    <div class="education-period">{{ edu.period }}</div>
+                    <div class="education-location">{{ edu.location }}</div>
+                </div>
             </div>
-            <div class="education-details">
-                <div class="education-period">{{ edu.period }}</div>
-                <div class="education-location">{{ edu.location }}</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="resume-experience">
-        <h3>Work Experience</h3>
-        <div class="experience-item" *ngFor="let job of workExperience">
-            <div class="experience-role">
-                <h4>{{ job.title }}</h4>
-                <div class="experience-company">{{ job.company }}</div>
-            </div>
-            <div class="experience-details">
-                <div class="experience-period">{{ job.period }}</div>
-                <div class="experience-location">{{ job.location }}</div>
-            </div>
-            <ul class="experience-responsibilities">
-                <li *ngFor="let resp of job.responsibilities">{{ resp }}</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="resume-certificates">
-        <h3>Certificates</h3>
-        <div class="certificate-item" *ngFor="let cert of certificates">
-            <h4>{{ cert.name }}</h4>
-            <p>{{ cert.description }}</p>
-        </div>
-    </section>
-
-    <section class="resume-projects">
-        <h3>Projects</h3>
-        <div class="project-item" *ngFor="let project of projects">
-            <div class="project-header">
-                <h4>{{ project.name }}</h4>
-                <div class="project-description">{{ project.description }}</div>
-                <div class="project-period" *ngIf="project.period">{{ project.period }}</div>
-            </div>
-            <div class="project-details" *ngIf="project.details">
-                <p *ngIf="!isArray(project.details)">{{ project.details }}</p>
-                <ul *ngIf="isArray(project.details)">
-                    <li *ngFor="let detail of project.details">{{ detail }}</li>
+        <section class="resume-experience">
+            <h3>Work Experience</h3>
+            <div class="experience-item" *ngFor="let job of workExperience">
+                <div class="experience-header">
+                    <div class="experience-role">
+                        <h4>{{ job.title }}</h4>
+                        <div class="experience-company">{{ job.company }}</div>
+                    </div>
+                    <div class="experience-details">
+                        <div class="experience-period">{{ job.period }}</div>
+                        <div class="experience-location">{{ job.location }}</div>
+                    </div>
+                </div>
+                <ul class="experience-responsibilities">
+                    <li *ngFor="let resp of job.responsibilities">{{ resp }}</li>
                 </ul>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="resume-certificates">
+            <h3>Certificates</h3>
+            <div class="certificate-item" *ngFor="let cert of certificates">
+                <h4>{{ cert.name }}</h4>
+                <p>{{ cert.description }}</p>
+            </div>
+        </section>
+
+        <section class="resume-projects">
+            <h3>Projects</h3>
+            <div class="project-item" *ngFor="let project of projects">
+                <div class="project-header">
+                    <h4>{{ project.name }}</h4>
+                    <div class="project-description">{{ project.description }}</div>
+                    <div class="project-period" *ngIf="project.period">{{ project.period }}</div>
+                </div>
+                <div class="project-details" *ngIf="project.details">
+                    <p *ngIf="!isArray(project.details)">{{ project.details }}</p>
+                    <ul *ngIf="isArray(project.details)">
+                        <li *ngFor="let detail of project.details">{{ detail }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <div class="resume-sidebar">
         <section class="sidebar-section">

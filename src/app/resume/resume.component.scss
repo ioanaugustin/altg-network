@@ -9,27 +9,51 @@
 
 .resume-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        "header header"
+        "content sidebar";
     grid-gap: 30px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "content";
+        padding: 20px;
+    }
 }
 
 .resume-header {
-    grid-column: 1 / -1;
+    grid-area: header;
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 20px;
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
     .header-main {
         h1 {
             font-size: 2.2rem;
             margin: 0 0 5px 0;
             color: #2c3e50;
+
+            @media (max-width: 768px) {
+                font-size: 1.8rem;
+            }
         }
 
         h2 {
@@ -37,6 +61,10 @@
             font-weight: 400;
             margin: 0;
             color: #3498db;
+
+            @media (max-width: 768px) {
+                font-size: 1.1rem;
+            }
         }
     }
 
@@ -44,6 +72,14 @@
         text-align: right;
         font-size: 0.9rem;
         line-height: 1.6;
+
+        @media (max-width: 768px) {
+            text-align: left;
+            margin-top: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px;
+        }
 
         a {
             color: #3498db;
@@ -62,6 +98,59 @@
     }
 }
 
+.resume-main-content {
+    grid-area: content;
+}
+
+.resume-sidebar {
+    grid-area: sidebar;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    align-self: start;
+
+    .sidebar-section {
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        .skill-item {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+
+            @media (max-width: 768px) {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .languages-list,
+    .interests-list {
+
+        .language-item,
+        .interest-item {
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
 section {
     margin-bottom: 25px;
 
@@ -75,8 +164,6 @@ section {
 }
 
 .resume-description {
-    grid-column: 1 / -1;
-
     p {
         line-height: 1.6;
         margin: 0;
@@ -98,6 +185,10 @@ section {
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
     .education-degree {
         h4 {
             margin: 0 0 5px 0;
@@ -113,17 +204,29 @@ section {
     .education-details {
         text-align: right;
         color: #666;
+
+        @media (max-width: 768px) {
+            text-align: left;
+            margin-top: 5px;
+        }
     }
 }
 
 .experience-item {
-    display: flex;
-    flex-direction: column;
+    .experience-header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
 
     .experience-role {
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
 
         h4 {
             margin: 0;
@@ -132,15 +235,28 @@ section {
 
         .experience-company {
             font-weight: 500;
+
+            @media (max-width: 768px) {
+                margin-top: 5px;
+            }
         }
     }
 
     .experience-details {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
         color: #666;
         font-size: 0.9rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            margin-top: 5px;
+
+            .experience-period,
+            .experience-location {
+                margin-bottom: 3px;
+            }
+        }
     }
 
     .experience-responsibilities {
@@ -189,86 +305,6 @@ section {
                 margin-bottom: 5px;
                 line-height: 1.5;
             }
-        }
-    }
-}
-
-.resume-sidebar {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 6px;
-
-    .sidebar-section {
-        margin-bottom: 25px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-
-        .skill-item {
-            background-color: #3498db;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
-    }
-
-    .languages-list,
-    .interests-list {
-
-        .language-item,
-        .interest-item {
-            padding: 5px 0;
-            border-bottom: 1px solid #e0e0e0;
-
-            &:last-child {
-                border-bottom: none;
-            }
-        }
-    }
-}
-
-// Media query for responsive design
-@media (max-width: 768px) {
-    .resume-container {
-        grid-template-columns: 1fr;
-    }
-
-    .resume-header {
-        flex-direction: column;
-
-        .header-contact {
-            text-align: left;
-            margin-top: 15px;
-        }
-    }
-
-    .education-item {
-        flex-direction: column;
-
-        .education-details {
-            text-align: left;
-            margin-top: 5px;
-        }
-    }
-
-    .experience-item {
-
-        .experience-role,
-        .experience-details {
-            flex-direction: column;
-        }
-
-        .experience-company,
-        .experience-location {
-            margin-top: 5px;
         }
     }
 }
