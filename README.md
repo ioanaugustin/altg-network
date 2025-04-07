@@ -1,59 +1,116 @@
-# AltGNetwork
+# AltGNetwork - Personal Portfolio Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+A clean, modern personal portfolio website built with Angular showcasing resume, articles, and professional information.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Responsive design that works on mobile, tablet, and desktop
+- Dynamic resume page with detailed experience, skills, and education sections
+- Article showcase section with featured content
+- Contact integration
+- Modern UI with smooth animations and transitions
 
-```bash
-ng serve
+## Project Structure
+
+The project follows a standard Angular structure with standalone components:
+
+```
+src/
+├── app/
+│   ├── header/          # Site navigation component
+│   ├── home/            # Landing page with hero section & article previews
+│   ├── resume/          # Detailed resume/CV component
+│   └── app.component.*  # Root component files
+├── assets/              # Static assets like images
+└── styles/              # Global styles
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Technologies Used
 
-## Code scaffolding
+- **Angular 17+**: Standalone components architecture
+- **Sass/SCSS**: For advanced styling
+- **Responsive Design**: Mobile-first approach
+- **Angular Router**: For navigation between pages
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Setup & Installation
 
-```bash
-ng generate component component-name
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/AltGNetwork.git
+   cd AltGNetwork
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+3. Run the development server:
+   ```bash
+   ng serve
+   ```
 
-## Building
+4. Navigate to `http://localhost:4200/` in your browser.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Running Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Building for Production
 
-For end-to-end (e2e) testing, run:
+To build the application for production:
 
 ```bash
-ng e2e
+ng build --prod
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The build artifacts will be stored in the `dist/` directory.
 
-## Additional Resources
+## Code Quality
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project adheres to Angular style guidelines and best practices:
+
+- Component/file size limits (<4KB)
+- Proper SCSS organization
+- Accessibility considerations
+
+## Responsive Behavior
+
+The site is fully responsive with dedicated layouts for:
+- Mobile phones (<480px)
+- Tablets (480px - 768px)
+- Small desktops (768px - 992px)
+- Large desktops (>992px)
+
+## Components
+
+### Header Component
+Navigation with mobile-friendly hamburger menu and smooth transitions.
+
+### Home Component
+Features a hero section, about section, articles grid, and contact call-to-action.
+
+### Resume Component
+Detailed professional history with:
+- Personal information
+- Skills and proficiencies
+- Work experience
+- Education
+- Certifications
+- Projects
+
+## License
+
+[MIT License](LICENSE)
+
+## Author
+
+Ioan Augustin Lates
+- Email: latesioanaugustin@gmail.com
+- LinkedIn: [iaugustinlates](https://www.linkedin.com/in/iaugustinlates/)
+
+---
+
+© 2025 Ioan Augustin Lates. All rights reserved.
