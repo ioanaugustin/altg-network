@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/alt-gnetwork/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/dist/alt-gnetwork/index.html"
+      }
+    ]
+  }
+}
